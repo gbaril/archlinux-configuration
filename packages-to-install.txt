@@ -1,0 +1,21 @@
+enable multilib in /etc/pacman.conf by uncommenting [multilib] section
+
+xorg-xwayland
+foot
+rofi
+sway
+waybar
+openssh
+networkmanager
+
+vim
+git
+
+firefox
+steam
+
+ttf-hack-nerd
+noto-fonts
+noto-fonts-cjk
+noto-fonts-emoji
+noto-fonts-extra
