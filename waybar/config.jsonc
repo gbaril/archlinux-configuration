@@ -1,0 +1,59 @@
+{
+    "layer": "top",
+    "mode": "dock",
+    "reload_style_on_change": true,
+    "height": 0,
+    "width": 0,
+    "margin": 0,
+    "spacing": 0,
+
+    "modules-left": ["sway/workspaces", "sway/mode"],
+    "modules-center": ["sway/window"],
+    "modules-right": ["network", "clock"],
+    "sway/window": {
+        "max-length": 60
+    },
+
+    "clock": {
+        "interval": 60, // seconds
+        "format": "{:%a %b %d %H:%M}",
+        "tooltip-format": "<tt>{calendar}</tt>",
+        "min-length": 18,
+		"max-length": 18,
+        "calendar": {
+            "mode-mon-col": 3,
+            "format": {
+                "months": "<b>{}</b>",
+                "weekdays": "<b>{}</b>",
+                "today": "<span color='#66FF00'><b><u>{}</u></b></span>"
+            }
+        },
+        "actions": {
+            "on-click": "shift_reset",
+            "on-click-right": "mode",
+            "on-scroll-down": "shift_up",
+            "on-scroll-up": "shift_down"
+        }
+    },
+
+    "network": {
+        "interval": 30, // seconds
+        "format": "󰤨",
+        "format-ethernet": "󰈀",
+        "format-wifi": "",
+        "format-disconnected": "󰤯",
+		"format-disabled": "󰤮",
+        "format-icons": [
+            "󰤟", "󰤢", "󰤥", "󰤨"
+		],
+        "min-length": 3,
+		"max-length": 3,
+        "on-click": "nmcli radio wifi on",
+		"on-click-right": "nmcli radio wifi off",
+        "tooltip-format": "<b>Gateway</b>: {gwaddr}",
+        "tooltip-format-ethernet": "<b>Interface</b>: {ifname}",
+        "tooltip-format-wifi": "<b>Network</b>: {essid}\n<b>IP</b>: {ipaddr}/{cidr}\n<b>Strength</b>: {signalStrength}%\n<b>Frequency</b>: {frequency} GHz",
+        "tooltip-format-disconnected": "Disconnected",
+        "tooltip-format-disabled": "Disabled"
+    }
+}

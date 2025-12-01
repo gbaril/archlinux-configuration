@@ -1,0 +1,16 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "Hack Nerd Font";
+    font-size: 14px;
+    min-height: 18px;
+}
+
+window#waybar {
+    background: white;
+}
+
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
